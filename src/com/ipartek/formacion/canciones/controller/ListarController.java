@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ipartek.formacion.canciones.modelo.ModeloCancion;
 import com.ipartek.formacion.canciones.modelo.ModeloCancionImpl;
+import com.ipartek.formacion.canciones.modelo.ModeloCancionMySQLImpl;
 import com.ipartek.formacion.canciones.pojo.Cancion;
 
 /**
@@ -36,7 +37,7 @@ public class ListarController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//recuperar canciones
-		ModeloCancionImpl modelo = ModeloCancionImpl.getInstance();
+		ModeloCancionMySQLImpl modelo = ModeloCancionMySQLImpl.getInstance();
 		ArrayList<Cancion> canciones = modelo.getAll();
 		
 		//pasar ATRIBUTO listado en la request para la JSP
